@@ -461,7 +461,7 @@ if __name__ == "__main__":
         sweep_step = 0.0001 # default is 0.000002
 
     # Odometry sample specific settings
-    plot_sample_odo = False
+    plot_sample_odo = True
 
     # Velocity sample specific settings
     plot_sample = False
