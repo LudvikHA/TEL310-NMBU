@@ -916,8 +916,8 @@ if __name__ == "__main__":
     landmark_dist_noise = 0.05 # Default 0.05
     landmark_bearing_noise = 0.05 # Default 0.05
 
-    render_landmark_heatmap = False
-    render_landmark_sample = True
+    render_landmark_heatmap = True
+    render_landmark_sample = False
     render_offset_heatmap = 60
 
 
