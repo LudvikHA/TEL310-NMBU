@@ -77,12 +77,14 @@ def motion_model_velocity(x_prev: np.ndarray, x_t: np.ndarray, u_t: np.ndarray, 
         # Radius
         r_star = np.sqrt((x-x_star)**2+(y-y_star)**2)
         delta_theta = np.arctan2(y_prime-y_star, x_prime-x_star)-np.arctan2(y-y_star, x-x_star)
+        delta_theta = np.arctan2(np.sin(delta_theta), np.cos(delta_theta))
 
         # Velocities obtained from the hypotheses
         omega_hat = delta_theta/delta_t
         v_hat = omega_hat*r_star
 
-    gamma_hat = (theta_prime-theta)/delta_t-omega_hat
+    delta_heading = np.arctan2(np.sin(theta_prime-theta), np.cos(theta_prime-theta))
+    gamma_hat = delta_heading/delta_t-omega_hat
 
 
     if triangle == True:
